@@ -1,7 +1,9 @@
 # Orderly CI — FIXME(T6): this workflow has several deliberate defects.
 # Make it a pipeline that would actually run the test suite on every push.
 name: CI
-on: [pushes]
+on:
+  push:
+    branches: [main]
 
 jobs:
   test:

@@ -8,3 +8,13 @@
 #   4. install pytest from the vendored wheels with:
 #        pip install --no-index --find-links=vendor pytest
 #   5. default command: run pytest quietly
+
+FROM python:3.12-slim
+
+workdir /app
+
+copy . .
+
+RUN pip install --no-index --find-links=vendor pytest   
+
+CMD ["python", "-m", "pytest", "-q"]
